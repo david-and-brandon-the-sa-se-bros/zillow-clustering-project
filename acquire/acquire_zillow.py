@@ -30,5 +30,5 @@ WHERE  prop.latitude IS NOT NULL
        AND prop.longitude IS NOT NULL
 """
 
-def acquire_zillow():
+def acquire_zillow_df():
     return utils.generate_df("zillow.csv", _zillow_query, utils.generate_db_url(env.user, env.password, env.host, "zillow"))
