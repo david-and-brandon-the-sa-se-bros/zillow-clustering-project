@@ -9,7 +9,7 @@ def drop_unnecessary_columns(zillow_df):
     df = zillow_df.copy()
     
     df = utils.handle_missing_values(df, .6, .4)
-    drop_cols = ['id', 'parcelid', 'finishedsquarefeet12', 'fullbathcnt', 'propertylandusetypeid', 'heatingorsystemtypeid', 'censustractandblock', 'rawcensustractandblock', 'regionidzip', 'assessmentyear', 'regionidcounty', 'yearbuilt']
+    drop_cols = ['id', 'parcelid', 'finishedsquarefeet12', 'fullbathcnt', 'propertylandusetypeid', 'heatingorsystemtypeid', 'censustractandblock', 'rawcensustractandblock', 'regionidzip', 'assessmentyear', 'regionidcounty', 'yearbuilt', 'roomcnt']
     
     return df.drop(columns=drop_cols)
 
@@ -42,7 +42,7 @@ def rename_zillow_columns(zillow_df):
     """
     df = zillow_df.copy()
     
-    rename_dict = {'bathroomcnt' : 'bathrooms', 'bedroomcnt' : 'bedrooms', 'buildingqualitytypeid' : 'build_quality', 'calculatedbathnbr' : 'fractional_bathrooms', 'calculatedfinishedsquarefeet' : 'sqft', 'lotsizesquarefeet' : 'lot_size', 'propertycountylandusecode' : 'land_use_code', 'propertyzoningdesc' : 'zoning_desc', 'regionidcity' : 'city_id', 'roomcnt' : 'rooms', 'unitcnt' : 'units', 'structuretaxvaluedollarcnt' : 'structure_tax_value', 'taxvaluedollarcnt' : 'tax_value', 'landtaxvaluedollarcnt' : 'land_tax_value', 'taxamount' : 'tax_amount', 'logerror' : 'error', 'transactiondate' : 'transaction_date', 'heatingorsystemdesc' : 'heat_system_desc', 'propertylandusedesc' : 'property_land_use_desc'}
+    rename_dict = {'bathroomcnt' : 'bathrooms', 'bedroomcnt' : 'bedrooms', 'buildingqualitytypeid' : 'build_quality', 'calculatedbathnbr' : 'fractional_bathrooms', 'calculatedfinishedsquarefeet' : 'sqft', 'lotsizesquarefeet' : 'lot_size', 'propertycountylandusecode' : 'land_use_code', 'propertyzoningdesc' : 'zoning_desc', 'regionidcity' : 'city_id', 'unitcnt' : 'units', 'structuretaxvaluedollarcnt' : 'structure_tax_value', 'taxvaluedollarcnt' : 'tax_value', 'landtaxvaluedollarcnt' : 'land_tax_value', 'taxamount' : 'tax_amount', 'logerror' : 'error', 'transactiondate' : 'transaction_date', 'heatingorsystemdesc' : 'heat_system_desc', 'propertylandusedesc' : 'property_land_use_desc'}
     
     return df.rename(columns=rename_dict)
 
@@ -58,7 +58,7 @@ def encode_zillow_categoricals(zillow_df):
     
     return pd.concat([df, fips_dummies, heat_dummies, prop_use_dummies], axis=1)
 
-def add_features(zillow_df):
+def add_zillow_features(zillow_df):
     """
     Takes in the zillow data frame and adds engineered features. Returns a copy of the dataframe with the new features.
     """
@@ -67,5 +67,14 @@ def add_features(zillow_df):
     df['age'] = 2017 - df['yearbuilt']
     
     return df
+
+def remove_zillow_outliers(zillow_df):
+    df = zillow_df.copy()
+    cont_vars = ['bathrooms', 'bedrooms', 'fractional_bathrooms', 'sqft', 'lot_size', 'structure_tax_value', 'tax_value', 'land_tax_value', 'tax_amount', 'error']
+
+    for var in cont_vars:
+        upper_bound, lower_bound = utils.generate_outlier_bounds(df, var, 3)  
+        df = df[(df[var] < upper_bound)]
     
+    return df
     
