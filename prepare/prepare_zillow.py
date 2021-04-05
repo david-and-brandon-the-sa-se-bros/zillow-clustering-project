@@ -69,12 +69,15 @@ def add_zillow_features(zillow_df):
     return df
 
 def remove_zillow_outliers(zillow_df):
+    """
+    Takes in the zillow data frame and removes outliers above the determined upper bound. Returns a copy of the data frame with the outliers       removed.
+    """
     df = zillow_df.copy()
     cont_vars = ['bathrooms', 'bedrooms', 'fractional_bathrooms', 'sqft', 'lot_size', 'structure_tax_value', 'tax_value', 'land_tax_value', 'tax_amount', 'error']
 
     for var in cont_vars:
         upper_bound, lower_bound = utils.generate_outlier_bounds(df, var, 3)  
-        df = df[(df[var] < upper_bound)]
+        df = df[(df[var] > lower_bound) & (df[var] < upper_bound)]
     
     return df
     
