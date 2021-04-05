@@ -31,4 +31,7 @@ WHERE  prop.latitude IS NOT NULL
 """
 
 def acquire_zillow_df():
+    """
+    Returns the zillow data frame with the data from the query. A CSV file with the specified name is created if none is present.
+    """
     return utils.generate_df("zillow.csv", _zillow_query, utils.generate_db_url(env.user, env.password, env.host, "zillow"))

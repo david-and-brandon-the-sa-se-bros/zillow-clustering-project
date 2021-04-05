@@ -5,6 +5,9 @@ from acquire.acquire_zillow import acquire_zillow_df
 from prepare.prepare_zillow import drop_unnecessary_columns, handle_missing_zillow_values, rename_zillow_columns, encode_zillow_categoricals, add_features
 
 def wrangle_zillow_data():
+    """
+    Returns the train, validate, test samples of the prepared zillow data frame. Samples are stratified by 'error'.
+    """
     zillow_df = acquire_zillow_df()
     
     zillow_df = handle_missing_zillow_values(zillow_df)
