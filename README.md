@@ -33,9 +33,7 @@ This is the structure of the data after preparation:
 Name | Description | Type
 :---: | :---: | :---:
 tax_value | The assesed value of the property for tax purposes | float
-#### Features
-Name | Description | Type
-:---: | :---: | :---:
-#### Other data
-Name | Description | Type
-:---: | :---: | :---:
+bathrooms | The number of bathrooms a property has  | float64
+bedrooms  | The Number  float64
+fractional_bathrooms |
+'sqft', 'lot_size', 'rooms', 'units', 'age', 'structure_tax_value', 'tax_value', 'land_tax_value', 'tax_amount', 'error
