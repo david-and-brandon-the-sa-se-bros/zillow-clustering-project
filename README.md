@@ -12,9 +12,9 @@
     * Contain notes from project planning.
 
 ## Goals
-* Identify the drivers for errors in Zestimates by incorporating clustering methodologies.
-* Document the process and analysis throughout the data science pipeline.
-* Demonstrate our process and articulate the information that was discovered.
+* Identify the drivers for errors in Zestimates, incorporating clustering methodologies on this project.
+* Document our process/ workflow used to accomplish the project goals.
+* Demonstrate our process and summarize/ communicate our findings.
 
 **Deliverables:**
 1. README.md file containing overall project information, how to reproduce work, and notes from project planning.
