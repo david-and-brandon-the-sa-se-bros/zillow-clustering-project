@@ -1,12 +1,19 @@
 # Zillow Clustering Project
 - This project uses a clustering model to predict logerror from the Zillow data set.
 - In this README we will :
-    * Explain what the project is. 
+    * Explain what the project is and goals the team attemted to reach. 
     * Explain how to reproduce our work. 
     * Contain notes from project planning.
+
 ## Goals
-* Utilizing the `zillow` dataset : find what is driving the errors in the Zestimates.
-      -Use the the 2017 properties and predictions data for single unit / single family homes.
+* Identify the drivers for errors in Zestimates by incorporating clustering methodologies.
+* Document the process and analysis throughout the data science pipeline.
+* Demonstrate our process and articulate the information that was discovered.
+
+**Deliverables:**
+1. README.md file containing overall project information, how to reproduce work, and notes from project planning.
+2. Jupyter Notebook Report detailing the pipeline process.
+3. Python modules that automate the data acquistion, preparation, and exploration process.
 
 ## Key Findings
 
