@@ -1,4 +1,9 @@
-# Zillow Clustering Project
+<p align="center">
+  <img src="https://www.underconsideration.com/brandnew/archives/zillow_logo.png" width="500" height="200" >
+</p> 
+
+
+# Zillow Clustering Project : by David Alviola & Brandon Bryant
 - This project uses a clustering model to predict logerror from the Zillow data set.
 - In this README we will :
     * Explain what the project is and goals the team attemted to reach. 
