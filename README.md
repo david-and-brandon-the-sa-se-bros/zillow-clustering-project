@@ -11,7 +11,7 @@
 ## Key Findings
 
 ## Project Planning
-* The The Kanban board used for planning is<a href="https://github.com/orgs/david-and-brandon-the-sa-se-bros/projects/1">here</a>
+* The The Kanban board used for planning is<a href="https://github.com/orgs/david-and-brandon-the-sa-se-bros/projects/1"> here</a>
    * `Data Acquisition`: Data is collected from the codeup cloud database with an appropriate SQL query
    * `Data Prep`: Column data types are appropriate for the data they contain
    * `Data Prep`: Missing values are investigated and handled
