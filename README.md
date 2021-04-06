@@ -29,11 +29,19 @@
 
 ## Data Dictionary
 This is the structure of the data after preparation:
-#### Target
 Name | Description | Type
 :---: | :---: | :---:
 tax_value | The assesed value of the property for tax purposes | float
-bathrooms | The number of bathrooms a property has  | float64
-bedrooms  | The Number  float64
-fractional_bathrooms |
-'sqft', 'lot_size', 'rooms', 'units', 'age', 'structure_tax_value', 'tax_value', 'land_tax_value', 'tax_amount', 'error
+bathrooms | The number of bathrooms a property has  | float
+bedrooms  | The number of bedrooms in home |   float
+fractional_bathrooms | The number of fractional bathrooms in home| float
+sqft | Calculated total finished living area of the home | float
+lot_size | Area of the lot in square feet | float
+rooms |  Number of bedrooms in home  | float
+units |  Number of units the structure is built into (i.e. 2 = duplex, 3 = triplex, etc...) | int
+age |  The age on years since the residence was built | int
+structure_tax_value | The assessed value of the built structure  | float
+tax_value | The total property tax assessed for that assessment year | float
+land_tax_value | The assessed value of the land area of the parcel | float
+tax_amount | The total tax assessed value of the property | float
+error | Difference of the Zestimate and the actual transaction price | float
