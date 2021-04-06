@@ -1,7 +1,8 @@
 ![](http://zillow.mediaroom.com/image/Zillow_Wordmark_Blue_RGB.jpg)
 
 
-# Zillow Clustering Project by `David Alviola & Brandon Bryant`
+## Zillow Clustering Project 
+   - __by David Alviola & Brandon Bryant__
 - This project uses a clustering model to predict logerror from the Zillow data set.
 - In this README we will :
     * Explain what the project is and goals the team attemted to reach. 
