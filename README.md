@@ -5,7 +5,7 @@
     * Explain how to reproduce our work. 
     * Contain notes from project planning.
 ## Goals
-* Utilizing the zillow dataset find what is driving the errors in the Zestimates.
+* Utilizing the `zillow` dataset : find what is driving the errors in the Zestimates.
       -Use the the 2017 properties and predictions data for single unit / single family homes.
 
 ## Key Findings
