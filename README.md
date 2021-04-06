@@ -18,7 +18,7 @@
 ## Key Findings
 
 ## Project Planning
-* The The Kanban board used for planning is<a href="https://github.com/orgs/david-and-brandon-the-sa-se-bros/projects/1"> here</a>
+* The The Kanban board used for planning is <a href="https://github.com/orgs/david-and-brandon-the-sa-se-bros/projects/1">here</a>
    * `Data Acquisition`: Data is collected from the codeup cloud database with an appropriate SQL query
    * `Data Prep`: Column data types are appropriate for the data they contain
    * `Data Prep`: Missing values are investigated and handled
@@ -36,7 +36,7 @@ Project Requirements:
 ## Setup this project
 * Dependencies
     1. [utilities.py](https://github.com/david-ryan-alviola/utilities/releases)
-        * Use release 2.3.2 or greater
+        * Use release 2.5.1 or greater
     2. python
     3. pandas
     4. scipy
