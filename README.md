@@ -53,29 +53,37 @@ Project Requirements:
 * Steps to recreate
     1. Clone this repository
     2. Install `utilities.py` according to the instructions
-    3. Setup env.py
-        * Remove the .dist extension (should result in `env.py`)
-        * Fill in your user_name, password, and host
-        * If you did not install `utilities.py` in your cloned repository, replace the "/path/to/utilities" string with the path to where `utilities.py` is installed
-    4. Open `zillow_clustering_project_final.ipynb` and run the cells
-
-
+    3. Open `zillow_clustering_project_final.ipynb` and run the cells
 
 ## Data Dictionary
 This is the structure of the data after preparation:
+#### Target
 Name | Description | Type
 :---: | :---: | :---:
-tax_value | The assesed value of the property for tax purposes | float
-bathrooms | The number of bathrooms a property has  | float
-bedrooms  | The number of bedrooms in home |   float
-fractional_bathrooms | The number of fractional bathrooms in home| float
-sqft | Calculated total finished living area of the home | float
-lot_size | Area of the lot in square feet | float
-rooms |  Number of bedrooms in home  | float
-units |  Number of units the structure is built into (i.e. 2 = duplex, 3 = triplex, etc...) | int
-age |  The age on years since the residence was built | int
-structure_tax_value | The assessed value of the built structure  | float
-tax_value | The total property tax assessed for that assessment year | float
-land_tax_value | The assessed value of the land area of the parcel | float
-tax_amount | The total tax assessed value of the property | float
 error | Difference of the Zestimate and the actual transaction price | float
+
+#### Features (from best model)
+Name | Description | Type
+:---: | :---: | :---:
+large_homes | Indicates if the property is in the large home cluster  | int
+newer_properties  | Indicates if the property is in the newer properties cluster |   int
+sqft | The total square feet of the property | float
+longitude | The decimal longitude of the property | float
+age | Age of the property calculated by subtracting the year built from 2017 | int
+ventura_county | Indicates if the property is in the Ventura County cluster  | int
+older_high_quality_properties | Indicates if the property is in the older, high quality cluster | int
+north_la_county | Indicates if the property is in the North LA county cluster | int
+orange_county | Indicates if the property is in the Orange County cluster | int
+
+#### Other Data
+Name | Description | Type
+:---: | :---: | :---:
+build_quality | Measure of quality from best (lowest) to worst (highest) | int
+6059 | Indicates if a property is in FIPS county 6059 (Orange) | int
+small_homes | Indicates if a property is in the small homes cluster | int
+west_la_county | Indicates if a property is in the West LA County cluster | int
+fractional_bathrooms | The number of bathrooms in a property including half baths | float
+latitude | The decimal latitude of the property | float
+6111 | Indicates if a property is in FIPS county 6111 (Ventura) | int
+medium_homes | Indicates if a property is in the medium homes cluster | int
+older_low_quality_properties | Indicates if a property is in the older, low quality property cluster | int
